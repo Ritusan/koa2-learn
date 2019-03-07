@@ -18,7 +18,11 @@ module.exports = mongoose.model('Person',personSchema)
 
 // 数据库增加内容：node服务向数据库服务写数据的过程
 // curl:shell命令，linux命令,发一个请求，-d代表post方式，'post中传入的数据'，post接口地址url
+
+// curl -H "Content-Type: application/json" -X POST  --data '{"name":"lilei","age":18}' http://localhost:3000/users/addPerson
 // curl -d 'name=lilei&age=27' http://localhost:3000/users/addPerson
+// curl -d "name=lilei" http://localhost:3000/users/addPerson
 // curl -d 'name=hanmeimei&age=17' http://localhost:3000/users/addPerson
 // 如果返回code=0，说明数据成功写入数据库，然后打开可视化工具，刷新，下面有了dbs数据库
-// curl -d 'name=lilei' http://localhost:3000/users/getPerson
+// curl -d "name=lilei" http://localhost:3000/users/getPerson
+// curl -H "Content-Type: application/json" -X POST  --data '{"name":"lilei"}' http://localhost:3000/users/getPerson
